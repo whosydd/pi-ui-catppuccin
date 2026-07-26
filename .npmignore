@@ -1,0 +1,10 @@
+# npm 发布忽略
+.git
+.gitignore
+node_modules
+*.log
+.DS_Store
+*.tgz
+.env*
+*.pem
+credentials

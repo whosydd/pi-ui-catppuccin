@@ -9,6 +9,12 @@ Catppuccin Mocha theme + Claude-style statusline for [pi](https://pi.dev).
 ## 安装
 
 ```bash
+pi install npm:pi-ui-catppuccin
+```
+
+或从 GitHub 安装：
+
+```bash
 pi install git:github.com/whosydd/pi-ui-catppuccin
 ```
 
