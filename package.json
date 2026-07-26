@@ -1,0 +1,43 @@
+{
+  "name": "pi-ui-catppuccin",
+  "version": "0.1.0",
+  "description": "Catppuccin Mocha theme and Claude-style statusline for pi",
+  "type": "module",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-coding-agent",
+    "catppuccin",
+    "theme",
+    "statusline",
+    "ui"
+  ],
+  "pi": {
+    "themes": ["./themes"],
+    "extensions": ["./extensions"],
+    "image": "https://raw.githubusercontent.com/whosydd/pi-ui-catppuccin/main/assets/preview.png"
+  },
+  "files": [
+    "themes",
+    "extensions",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whosydd/pi-ui-catppuccin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/whosydd/pi-ui-catppuccin/issues"
+  },
+  "homepage": "https://github.com/whosydd/pi-ui-catppuccin#readme"
+}

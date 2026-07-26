@@ -1,0 +1,14 @@
+{
+  "packages": [
+    {
+      "source": "npm:pi-subagents",
+      "autoload": false,
+      "extensions": [
+        "-index.ts"
+      ],
+      "skills": [
+        "-skills/pi-subagents/SKILL.md"
+      ]
+    }
+  ]
+}
