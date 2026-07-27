@@ -15,7 +15,7 @@
   "pi": {
     "themes": ["./themes"],
     "extensions": ["./extensions"],
-    "image": "https://raw.githubusercontent.com/whosydd/pi-ui-catppuccin/main/assets/preview.png"
+    "image": "https://raw.githubusercontent.com/whosydd/pi-ui-catppuccin/main/assets/preview.mov"
   },
   "files": [
     "themes",

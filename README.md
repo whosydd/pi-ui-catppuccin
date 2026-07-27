@@ -4,7 +4,7 @@ Catppuccin Mocha theme + Claude-style statusline for [pi](https://pi.dev).
 
 ## 预览
 
-![Catppuccin Mocha + statusline](https://raw.githubusercontent.com/whosydd/pi-ui-catppuccin/main/assets/preview.png)
+<!-- 将视频上传至 GitHub Issue/Release 获取附件链接后替换此处 -->
 
 ## 安装
 
