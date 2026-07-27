@@ -1,6 +1,6 @@
 {
   "name": "pi-ui-catppuccin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Catppuccin Mocha theme and Claude-style statusline for pi",
   "type": "module",
   "keywords": [
