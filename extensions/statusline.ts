@@ -49,9 +49,20 @@ const GRID = [
 	"##    ##",
 ] as const;
 
-/** Solid accent logo lines only (no blank/version). */
-function getPiLogoLines(theme: Theme): string[] {
-	const ink = theme.fg("accent", BLOCK);
+const THINKING_COLOR: Record<string, ThemeColor> = {
+	off: "thinkingOff",
+	minimal: "thinkingMinimal",
+	low: "thinkingLow",
+	medium: "thinkingMedium",
+	high: "thinkingHigh",
+	xhigh: "thinkingXhigh",
+	max: "thinkingMax",
+};
+
+/** Solid logo lines — color follows thinking level. */
+function getPiLogoLines(theme: Theme, level?: string): string[] {
+	const color: ThemeColor = level ? (THINKING_COLOR[level] ?? "accent") : "accent";
+	const ink = theme.fg(color, BLOCK);
 	const lines: string[] = [];
 	for (const row of GRID) {
 		let line = HEADER_INDENT;
@@ -111,7 +122,8 @@ function applyMascotHeader(ctx: ExtensionContext) {
 	if (ctx.mode !== "tui") return;
 	ctx.ui.setHeader((_tui, theme) => ({
 		render(width: number): string[] {
-			const logo = getPiLogoLines(theme);
+			const level = ctx.model?.reasoning ? ctx.thinkingLevel : undefined;
+			const logo = getPiLogoLines(theme, level);
 			const hints = getHeaderHints(theme);
 			const logoW = Math.max(0, ...logo.map((l) => visibleWidth(l)));
 			const gap = 3;
@@ -295,16 +307,6 @@ const FILLED = "█";
 const EMPTY = "░";
 /** Auto-compact indicator (left of context bar). */
 const AUTO_COMPACT_ICON = "⟳";
-
-const THINKING_COLOR: Record<string, ThemeColor> = {
-	off: "thinkingOff",
-	minimal: "thinkingMinimal",
-	low: "thinkingLow",
-	medium: "thinkingMedium",
-	high: "thinkingHigh",
-	xhigh: "thinkingXhigh",
-	max: "thinkingMax",
-};
 
 function formatTokens(count: number): string {
 	if (count < 1000) return String(count);
@@ -526,5 +528,6 @@ export default function (pi: ExtensionAPI) {
 
 	pi.on("thinking_level_select", (_event, ctx) => {
 		applyClaudeFooter(ctx);
+		applyMascotHeader(ctx);
 	});
 }
